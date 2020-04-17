@@ -12,12 +12,13 @@ php:
   env: prod
   debug: '0'
   secret: ""
-  corsAllowOrigin: "^https?://.*?\\.example\\.com$"
-  trustedHosts: "^.*\\.example\\.com$"
+  corsAllowOrigin: "^https?://.*?\\.cleanaircnx\\.com$"
+  trustedHosts: "^.*\\.cleanaircnx\\.com$"
   trustedProxies:
     - 10.0.0.0/8
     - 172.16.0.0/12
     - 192.168.0.0/16
+    - 209.95.55.158/8
 
 nginx:
   repository: quay.io/api-platform/nginx
@@ -53,9 +54,9 @@ postgresql:
 mercure:
   enabled: true
   publishUrl: http://mercure/.well-known/mercure
-  subscribeUrl: https://mercure.example.com/.well-known/mercure
+  subscribeUrl: https://mercure.cleanaircnx.com/.well-known/mercure
   allowAnonymous: "1"
-  corsAllowedOrigins: "^https?://.*?\\.example\\.com$"
+  corsAllowedOrigins: "^https?://.*?\\.cleanaircnx\\.com$"
   acmeHosts: "" # TODO: Fix the Mercure chart
   jwtKey: ""
   service:
@@ -74,10 +75,10 @@ ingress:
       # - mercure.example.com
   hosts:
     api:
-      host: example.com
+      host: cleanaircnx.com
       serviceName: varnish
     mercure:
-      host: mercure.example.com
+      host: mercure.cleanaircnx.com
       serviceName: mercure
 
 resources: {}
