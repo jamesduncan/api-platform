@@ -12,7 +12,7 @@ php:
   env: prod
   debug: '0'
   secret: ""
-  corsAllowOrigin: "^https?://.*?\\.cleanaircnx\\.com$"
+  corsAllowOrigin: "^https?://.*?$"
   trustedHosts: "^.*\\.cleanaircnx\\.com$"
   trustedProxies:
     - 10.0.0.0/8
@@ -56,7 +56,7 @@ mercure:
   publishUrl: http://mercure/.well-known/mercure
   subscribeUrl: https://mercure.cleanaircnx.com/.well-known/mercure
   allowAnonymous: "1"
-  corsAllowedOrigins: "^https?://.*?\\.cleanaircnx\\.com$"
+  corsAllowedOrigins: "^https?://.*?$"
   acmeHosts: "" # TODO: Fix the Mercure chart
   jwtKey: ""
   service:
@@ -79,7 +79,7 @@ ingress:
       serviceName: varnish
     mercure:
       host: mercure.cleanaircnx.com
-      serviceName: mercure
+      serviceName: api-mercure
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
